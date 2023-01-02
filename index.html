@@ -11,26 +11,52 @@
         function getComputerChoice() {
             let choice = ((Math.floor(Math.random()* 3)));
             console.log(choice);
-            let computerSelection;
+           
 
             if (choice === 1) {
-                return ("Rock");
+                return ("rock");
             }
             else if (choice === 2) {
-                return ("Paper");
+                return ("paper");
             }
             else {
-                return ("Scissors")
+                return ("scissors")
             }
         }
-        let computerSelection;
+       
         console.log(getComputerChoice());
-        let getComputerSelection = getComputerChoice()
-        let playerSelection = prompt("Please write Rock, Paper or Scissors", "");
+        let computerSelection = getComputerChoice()
+        let playerSelection = (prompt("Please write Rock, Paper or Scissors", ""));
+        playerSelection.toLowerCase();
 
-        function getOneRound(computerSelection, playerSelection) {
-            
+
+        function playOneRound(computerSelection, playerSelection) {
+            if (computerSelection === "paper" || playerSelection === "rock"){
+                return (alert("You lose! paper beats rock!"));
+            }
+
+            else if (computerSelection === "rock" || playerSelection === "paper") {
+                return (alert("You win! paper beats rock!"));
+            }
+
+            else if (computerSelection === "paper" || playerSelection === "scissors") {
+                return(alert("You win! Scissors beats paper!"));
+
+            }
+            else if (computerSelection === "rock" || playerSelection === "scissors") {
+                return(alert("You lose! Rock beats scissors!"));
+            }
+            else if (computerSelection === "scissors" || playerSelection === "paper") {
+                return(alert("You lose! Scissors beats paper!"));
+            }
+            else if (computerSelection === "scissors" || playerSelection === "rock") {
+                return(alert("You win! Rock beats scissors!"));
+            }
+            else {
+                return("Play again! Both values are equal");
+            }
         }
+        console.log(playOneRound(playerSelection, computerSelection));
 
 
 
