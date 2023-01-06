@@ -70,6 +70,7 @@
             //console.log(getComputerChoice());
             let counter = 0;
             let uncounter = 0;
+            let equalscounter = 0;
             for (let i = 0; i < 5; i++) {
                 let computerSelection = getComputerChoice();
             console.log(computerSelection);
@@ -81,16 +82,21 @@
                     counter = counter + 1;
                     console.log("This is counter" + counter);
                 }
+                else if (stringfromOneRound.charAt(0) === "P") {
+                    i = i - 1;
+                }
+
                 else {
                     uncounter = uncounter +1;
                 }
             }
-            if (counter >= uncounter) {
+            if (counter > uncounter) {
                 alert("You win with the result of " + counter + "/5");
             }
             else {
-                alert("You lose with the result of " + counter + "/5")
+                alert("You lose with the result of " + counter + "/5");
             }
+         
         }
     
         game();
