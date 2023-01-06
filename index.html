@@ -53,6 +53,11 @@
             else if (computerSelection === "scissors" && playerSelection === "rock") {
                 return("You win! Rock beats scissors!");
             }
+
+            else if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
+            return ("You lose! Illegal choice of item. Next time choose rock, paper or scissors");
+             }
+            
             else {
                 return("Play again! Both values are equal");
             }
@@ -64,7 +69,7 @@
             //console.log(getComputerChoice());
             let counter = 0;
             let uncounter = 0;
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 let computerSelection = getComputerChoice();
             console.log(computerSelection);
         let playerSelection = (prompt("Please write Rock, Paper or Scissors", ""));
@@ -78,7 +83,6 @@
                 }
                 else {
                     uncounter = uncounter +1;
-
                 }
             }
             if (counter >= uncounter) {
@@ -88,6 +92,7 @@
                 alert("You lose with the result of " + counter + "/5")
             }
         }
+    
         game();
 
     </script>
