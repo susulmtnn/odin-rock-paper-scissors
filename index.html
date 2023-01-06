@@ -32,6 +32,7 @@
 
 
         function playOneRound(computerSelection, playerSelection) {
+            playerSelection = playerSelection.toLowerCase();
             if (computerSelection === "paper" && playerSelection === "rock"){
                 return ("You lose! paper beats rock!");
             }
@@ -73,7 +74,6 @@
                 let computerSelection = getComputerChoice();
             console.log(computerSelection);
         let playerSelection = (prompt("Please write Rock, Paper or Scissors", ""));
-        playerSelection.toLowerCase();
         console.log(playerSelection + "This is playerselsection value")
         let stringfromOneRound = playOneRound(computerSelection, playerSelection);
         alert(stringfromOneRound);
